@@ -1,0 +1,1 @@
+web: waitress-serve --port=$ROOT crudproject1.wsgi:application

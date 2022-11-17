@@ -21,11 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '=!z%7&q6dve81l8*bs&g8o%@yq-k3@9bgwvh(b7q(z(%c0-8^4'
+# SECRET_KEY= os.environ['CRUD_KEY']                                                    ##Heroku
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False                                                                           ##Heroku        
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://hgdjango.herokuapp.com','localhost.com']
 
 
 # Application definition
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',                                      ##Heroku
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
